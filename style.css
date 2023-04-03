@@ -1,0 +1,63 @@
+body {
+  background-color: black;
+}
+header {
+  padding-left: 20px;
+}
+.Company-Name {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: cursive;
+}
+
+.nav-text {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: cursive;
+}
+.slider-1 {
+  width: 110%;
+  height: 5%;
+}
+/* .carousel-item {
+  height: 150px;
+  width: 400px;
+  margin-left: 300px;
+}
+.carousel-item img {
+  height: 150px;
+  width: 400px;
+} */
+.Main-Title {
+  color: white;
+  text-align: center;
+  font-family: cursive;
+}
+.Cart-Title {
+  color: white;
+  font-family: cursive;
+}
+.rating-Bar {
+  color: crimson;
+}
+.digit-style {
+  margin-left: 140px;
+}
+
+.my-card {
+  position: absolute;
+  left: 20px;
+  top: 240px;
+  background-color: #001f3f;
+  border-radius: 10px;
+}
+#display-card {
+  margin-left: 350px;
+  margin-top: 10px;
+}
+.button-1 {
+  background-color: black;
+  margin-bottom: 20px;
+}

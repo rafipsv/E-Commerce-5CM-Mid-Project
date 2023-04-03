@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/53a1a740ca.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Midterm Project-Online Shopping</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="">
+      <nav
+        class="navbar navbar-expand-lg navbar-dark"
+        style="background-color: black"
+      >
+        <a class="navbar-brand" href="#" , style="padding-right: 620px"
+          ><span class="Company-Name"
+            >Noob <span style="color: crimson"> Online</span> Shopping</span
+          ></a
+        >
+
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"
+                ><span class="nav-text">Home</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><span class="nav-text">Service</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><span class="nav-text">Review</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><span class="nav-text">About Us</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><span class="nav-text">Contact Us </span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="carousel-inner slider-1"> 
+      <div class="carousel-item active"> 
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/011/871/820/small/online-shopping-on-phone-buy-sell-business-digital-web-banner-application-money-advertising-payment-ecommerce-illustration-search-vector.jpg" class="d-block w-100" alt="..."> 
+      </div> 
+      <div class="carousel-item"> 
+        <img src="https://www.shutterstock.com/image-vector/online-shopping-on-phone-buy-260nw-2078330851.jpg" class="d-block w-100" alt="..."> 
+      </div> 
+      <div class="carousel-item"> 
+        <img src="https://www.shutterstock.com/image-vector/paper-art-shopping-online-on-260nw-2074005938.jpg" class="d-block w-100" alt="..."> 
+      </div> 
+      <div class="carousel-item"> 
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/008/247/831/small/online-shopping-on-phone-buy-sell-business-digital-web-banner-application-money-advertising-payment-ecommerce-search-vector.jpg" class="d-block w-100" alt="..."> 
+      </div> 
+    </div> 
+    </div>
+    <!-- <section class="slider-1">
+      <div
+        id="carouselExampleFade"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="1500">
+            <img
+              src="https://img.freepik.com/free-vector/drink-ad-nature-watermelon-juice_52683-34242.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item" data-bs-interval="1500">
+            <img
+              src="https://images.remotehub.com/d42c62669a7711eb91397e038280fee0/original_thumb/ec1eb042.jpg?version=1618112516"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item" data-bs-interval="1500">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq_-qxvmqxE8qnNCjGfhUDTQv2CXwi1AYUZQ"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section> -->
+      <div class="row">
+        <div class="my-card card w-25 p-2 col-3">
+          <h3 class="Main-Title">
+            Product <span style="color: crimson">Cart</span>
+          </h3>
+          <hr style="color: white; height: 2px" />
+          <h5 class="Cart-Title">
+            Total Products&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              id="total-products"
+            >
+              0
+            </span>
+          </h5>
+          <h5 class="Cart-Title">
+            Price<span id="price" , class="digit-style">0</span>
+          </h5>
+          <h5 class="Cart-Title">
+            Delivery Charge&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              id="delivery-charge"
+              >0</span
+            >
+          </h5>
+          <h5 class="Cart-Title">
+            Shipping
+            Cost&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              id="Shipping-Cost"
+              >0</span
+            >
+          </h5>
+          <h5 class="Cart-Title">
+            Total
+            Price&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span id="total">0</span>
+          </h5>
+          <h5 class="Cart-Title">
+            Tax&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              id="Tax"
+              >0</span
+            >
+          </h5>
+          <h5 class="Cart-Title">
+            Grand
+            Total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              id="Grand-Total"
+              >0</span
+            >
+          </h5>
+          <h5 class="Cart-Title">
+            Discount&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              id="Discount"
+              >0</span
+            >
+          </h5>
+          <h5 class="Cart-Title">
+            Final
+            Total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              id="Final-Total"
+              >0</span
+            >
+          </h5>
+          <!-- <hr /> -->
+          <br />
+          <button
+            onclick="orderProducts()"
+            class="btn btn-secondary"
+            ,
+            id="alert"
+          >
+            Order Now
+          </button>
+          <div id="details"></div>
+        </div>
+
+        <!-- card -->
+        <div
+          id="display-card"
+          class="row row-cols-1 row-cols-md-3 g-4 products col-9"
+        ></div>
+      </div>
+    </section>
+    <script>
+      document.getElementById("alert").addEventListener("click", function () {
+        var total = document.getElementById("total").innerText;
+        //Swal.fire("Thank You for Shopping With Us\nTotal Price is " + total);
+        Swal.fire("Thank You So Much!!!", "Total Price = " + total, "success");
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
