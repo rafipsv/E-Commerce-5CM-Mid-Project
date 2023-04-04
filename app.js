@@ -23,12 +23,12 @@ const showDetails = (products) => {
             </div>
             <div class="footer mx-auto">
             <button class="btn btn-secondary button-1" onclick="addToCard(${element.id},${element.price})" >Add to Cart</button>
+            <button class="btn btn-secondary button-2" onclick="RemoveToCart(${element.price})" >Remove to Cart</button>
             </div>
           </div>
         `;
     details.appendChild(div);
   });
-  console.log(products);
 };
 let count = 0;
 const addToCard = (id, price, newPrice) => {
@@ -82,6 +82,8 @@ const ShippingCost = (count) => {
     document.getElementById("Shipping-Cost").innerText = 200;
   } else if (count >= 15) {
     document.getElementById("Shipping-Cost").innerText = 500;
+  } else {
+    document.getElementById("Shipping-Cost").innerText = 0;
   }
 };
 const Tax = (Price) => {
@@ -117,11 +119,49 @@ const ratings = (rate) => {
     return (star = ` <h5><i class="fas fa-star"></i> ${rate}</h5>`);
   }
 };
-
-const orderProducts = () => {
-  const details = document.getElementById("details");
-  details.textContent = "";
-  const totalPrice = document.getElementById("total").innerText;
+const RemoveToCart = (price) => {
+  let total = Number(document.getElementById("total-products").innerText);
+  if (total > 0) {
+    total = total - 1;
+    count = total;
+    document.getElementById("total-products").innerText = total;
+  }
+  let oldPrice = Number(document.getElementById("price").innerText);
+  if (oldPrice > 0) {
+    oldPrice = oldPrice - price;
+    document.getElementById("price").innerText = oldPrice.toFixed(2);
+  }
+  DeliveryCharge(oldPrice);
+  ShippingCost(total);
+  let val1 = Number(document.getElementById("price").innerText);
+  let val2 = Number(document.getElementById("delivery-charge").innerText);
+  let val3 = Number(document.getElementById("Shipping-Cost").innerText);
+  let val4 = val1 + val2 + val3;
+  document.getElementById("total").innerText = val4.toFixed(2);
+  Tax(val4);
+  let val5 = Number(document.getElementById("total").innerText);
+  let val6 = Number(document.getElementById("Tax").innerText);
+  let val7 = val5 + val6;
+  document.getElementById("Grand-Total").innerText = val7.toFixed(2);
+  let val8 = Number(document.getElementById("Grand-Total").innerText);
+  let val9 = (val8 / 100) * 5;
+  document.getElementById("Discount").innerText = val9.toFixed(2);
+  let val10 = Number(document.getElementById("Grand-Total").innerText);
+  let val11 = Number(document.getElementById("Discount").innerText);
+  let val12 = val10 - val11;
+  document.getElementById("Final-Total").innerText = val12.toFixed(2);
+};
+const EmptyCart = () => {
+  count = 0;
+  document.getElementById("total-products").innerText = 0;
+  document.getElementById("price").innerText = 0;
+  document.getElementById("delivery-charge").innerText = 0;
+  document.getElementById("Shipping-Cost").innerText = 0;
+  document.getElementById("total").innerText = 0;
+  document.getElementById("Tax").innerText = 0;
+  document.getElementById("Grand-Total").innerText = 0;
+  document.getElementById("Discount").innerText = 0;
+  document.getElementById("Final-Total").innerText = 0;
 };
 
 searchProducts();
