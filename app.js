@@ -39,6 +39,7 @@ const addToCard = (id, price, newPrice) => {
   total();
   GrandTotal();
   Discount();
+  FinalTotal();
 };
 const updatePrice = (price) => {
   const oldPrice = document.getElementById("price").innerText;
@@ -100,10 +101,10 @@ const Discount = () => {
   document.getElementById("Discount").innerText = discount.toFixed(2);
 };
 const FinalTotal = () => {
-  const total = Number(document.getElementById("total").innerText);
-  const tax = Number(document.getElementById("Tax").innerText);
-  const val = total + tax;
-  document.getElementById("Grand-Total").innerText = val.toFixed(2);
+  const total = Number(document.getElementById("Grand-Total").innerText);
+  const discount = Number(document.getElementById("Discount").innerText);
+  const val = total - discount;
+  document.getElementById("Final-Total").innerText = val.toFixed(2);
 };
 const ratings = (rate) => {
   if (rate >= 4) {
