@@ -1,8 +1,11 @@
-const searchProducts = () => {
+// this is our first function which is called after app starting
+const GetProducts = () => {
   fetch("https://fakestoreapi.com/products")
     .then((res) => res.json())
     .then((data) => showDetails(data));
 };
+GetProducts();
+// this function defines the visual result of product card according to fetching data from api
 const showDetails = (products) => {
   const details = document.getElementById("display-card");
   products.forEach((element) => {
@@ -23,7 +26,7 @@ const showDetails = (products) => {
             </div>
             <div class="footer mx-auto">
             <button class="btn btn-secondary button-1" onclick="addToCard(${element.id},${element.price})" >Add to Cart</button>
-            <button class="btn btn-secondary button-2" onclick="RemoveToCart(${element.price})" >Remove to Cart</button>
+            <button class="btn btn-secondary button-2" onclick="RemoveToCart(${element.price})" >Remove to Cart</button> 
             </div>
           </div>
         `;
@@ -31,6 +34,7 @@ const showDetails = (products) => {
   });
 };
 let count = 0;
+// this function is for add products to cart. this is linked to add to cart button which is in products card
 const addToCard = (id, price, newPrice) => {
   count = count + 1;
   document.getElementById("total-products").innerHTML = count;
@@ -41,6 +45,7 @@ const addToCard = (id, price, newPrice) => {
   Discount();
   FinalTotal();
 };
+// this is for updating price after clicking add to cart button
 const updatePrice = (price) => {
   const oldPrice = document.getElementById("price").innerText;
   const oldPriceFloat = parseFloat(oldPrice);
@@ -48,6 +53,7 @@ const updatePrice = (price) => {
   document.getElementById("price").innerText = newPrice.toFixed(2);
   DeliveryCharge(newPrice);
 };
+// this function is for calculate total price
 const total = () => {
   const price = parseFloat(document.getElementById("price").innerText);
   const deliver = parseFloat(
@@ -60,6 +66,7 @@ const total = () => {
   document.getElementById("total").innerText = total;
   Tax(total);
 };
+// this is for calculate delivery charge accoding to total price
 const DeliveryCharge = (newPrice) => {
   if (newPrice <= 500) {
     return (document.getElementById("delivery-charge").innerText = 0);
@@ -74,6 +81,8 @@ const DeliveryCharge = (newPrice) => {
     document.getElementById("delivery-charge").innerText = 250;
   }
 };
+
+// this is for calculate shipping cost according to products count
 const ShippingCost = (count) => {
   if (count >= 5 && count < 10) {
     return (document.getElementById("Shipping-Cost").innerText = 100);
@@ -86,28 +95,33 @@ const ShippingCost = (count) => {
     document.getElementById("Shipping-Cost").innerText = 0;
   }
 };
+// this is for calculate the tax to 15%
 const Tax = (Price) => {
   const val = (Price / 100) * 15;
   const tax = val.toFixed(2);
   document.getElementById("Tax").innerText = tax;
 };
+// this is for calculating grand total price with tax, shipping const, and delivary charge
 const GrandTotal = () => {
   const total = Number(document.getElementById("total").innerText);
   const tax = Number(document.getElementById("Tax").innerText);
   const val = total + tax;
   document.getElementById("Grand-Total").innerText = val.toFixed(2);
 };
+// this is for calculating discount
 const Discount = () => {
   const val = Number(document.getElementById("Grand-Total").innerText);
   const discount = (val / 100) * 5;
   document.getElementById("Discount").innerText = discount.toFixed(2);
 };
+// this is final total with GrandTotal - discount
 const FinalTotal = () => {
   const total = Number(document.getElementById("Grand-Total").innerText);
   const discount = Number(document.getElementById("Discount").innerText);
   const val = total - discount;
   document.getElementById("Final-Total").innerText = val.toFixed(2);
 };
+// this is for show rating start according to ratings which is cames from api
 const ratings = (rate) => {
   if (rate >= 4) {
     return (star = ` <h5><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> ${rate}</h5>`);
@@ -119,6 +133,7 @@ const ratings = (rate) => {
     return (star = ` <h5><i class="fas fa-star"></i> ${rate}</h5>`);
   }
 };
+// this is for remove specific item and its details from Product Cart
 const RemoveToCart = (price) => {
   let total = Number(document.getElementById("total-products").innerText);
   if (total > 0) {
@@ -151,6 +166,7 @@ const RemoveToCart = (price) => {
   let val12 = val10 - val11;
   document.getElementById("Final-Total").innerText = val12.toFixed(2);
 };
+// this is for empty whole cart after clicking Empty Cart Button
 const EmptyCart = () => {
   count = 0;
   document.getElementById("total-products").innerText = 0;
@@ -163,5 +179,3 @@ const EmptyCart = () => {
   document.getElementById("Discount").innerText = 0;
   document.getElementById("Final-Total").innerText = 0;
 };
-
-searchProducts();
